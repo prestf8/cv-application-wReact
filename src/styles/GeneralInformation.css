@@ -1,0 +1,15 @@
+.general-information-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input {
+    margin-top: 1rem;
+    border-radius: 3px;
+    padding: 3px;
+    outline: none;
+    border: 1px solid black;
+    height: 25px;
+    font-size: 1.3rem;
+}
