@@ -1,9 +1,3 @@
-.work-experience-div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
 .add-experience-btn {
     cursor: pointer;
     padding: 1rem;

@@ -10,13 +10,14 @@ class WorkExperience extends Component {
     }
 
     render() {
-        const {addExperience, experiences} = this.props;
+        const {addExperience, deleteExperience, experiences, handleOnChange} = this.props;
 
         return (
             <div className="work-experience-div">
+                <h3 className="subtitle subtitle-work-experience">Work Experience</h3>
                 
-                {experiences.map(exp => {
-                    <SingularExperience id={experiences.id} companyName={experiences.companyName} title={experiences.title} description={experiences.description} weFrom={experiences.weFrom} weTo={experiences.weTo}></SingularExperience>
+                {experiences.map((exp) => {
+                    return <SingularExperience key={exp.id} id={exp.id} companyName={exp.companyName} title={exp.title} description={exp.description} weFrom={exp.weFrom} weTo={exp.weTo} deleteExperience={deleteExperience} handleOnChange={handleOnChange}></SingularExperience>
                 })}
 
                 <button type="button" className="add-experience-btn" onClick={addExperience}>Add</button>

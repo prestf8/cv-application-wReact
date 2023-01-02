@@ -45,22 +45,26 @@ function InputDetails(props) {
         }))
     }
 
-    // function workExperienceOnChange(e) {
+    function workExperienceOnChange(e) {
+        let id=e.target.parentElement.getAttribute("data-id");
 
-    //     let 
+        const changedWorkExperience = details.workExperience.map((experience) => {
+            if (experience.id == id) {
+                return {
+                    ...experience,
+                    [e.target.name]: e.target.value,
+                }
+            }
+            return experience;
+        });
 
-    //     setDetails((prevState) => ({
-    //         ...prevState,
-    //         workExperience: [
-    //             ...prevState.workExperience,
-    //             {
-    //                 id: uniqid(),
-
-    //             }
-
-    //         ]
-    //     }))
-    // }
+        setDetails((prevState) => ({
+            ...prevState,
+            workExperience: [
+                ...changedWorkExperience
+            ]
+        }))
+    }
 
     function addExperience(e) {
         e.preventDefault();
@@ -80,11 +84,23 @@ function InputDetails(props) {
         }))
     }
 
+    function deleteExperience(e) {
+        e.preventDefault();
+        let id = e.target.parentElement.getAttribute("data-id");
+        let updatedWorkExperience = details.workExperience.filter((experience) => experience.id != id);
+        setDetails((prevState) => ({
+            ...prevState,
+            workExperience: [
+                ...updatedWorkExperience
+            ]
+        }))
+    }
+
 
     return (
         <form>
             <GeneralInformation name={details.name} email={details.email} phoneNumber={details.phoneNumber} handleOnChange={generalInformationOnChange}></GeneralInformation>
-            <WorkExperience experiences={details.workExperience} addExperience={addExperience}></WorkExperience>
+            <WorkExperience experiences={details.workExperience} addExperience={addExperience} deleteExperience={deleteExperience} handleOnChange={workExperienceOnChange}></WorkExperience>
             {/* <Education></Education> */}
             <button type="submit">Submit</button>
         </form>
