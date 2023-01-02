@@ -1,6 +1,6 @@
 import './App.css';
 import React, {Component} from "react";
-import GeneralInformation from "./components/GeneralInformation";
+import InputDetails from "./components/InputDetails.js";
 
 class App extends Component {
   constructor() {
@@ -9,7 +9,9 @@ class App extends Component {
 
   render() {
     return (
-      <GeneralInformation></GeneralInformation>
+      <div>
+        <InputDetails></InputDetails>
+      </div>
     )
   }
 }

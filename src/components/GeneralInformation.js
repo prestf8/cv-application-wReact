@@ -8,11 +8,14 @@ class GeneralInformation extends Component {
     }
 
     render() {
+        let { handleOnChange, name, email, phoneNumber } = this.props;
+
         return (
-            <div class="general-information-div">
-                <input class="input name-input" type="text" />
-                <input class="input email-input" type="email" />
-                <input class="input phone-number-input" type="tel" />
+            <div className="general-information-div">
+                <h3 className="subtitle subtitle-general-information">Personal Information</h3>
+                <input className="input name-input" type="text" placeholder="Name" onChange={handleOnChange} name="name" value={name}/>
+                <input className="input email-input" type="email" placeholder="Email" onChange={handleOnChange} name="email" value={email}/>
+                <input className="input phone-number-input" type="tel" placeholder="Phone Number" onChange={handleOnChange} name="phoneNumber" value={phoneNumber}/>
             </div>
         )
     }
