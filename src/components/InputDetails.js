@@ -30,6 +30,7 @@ function InputDetails(props) {
         ],
         education: [
             {
+                id: "first",
                 school: "",
                 titleOfStudy: "",
                 eduFrom: "",
@@ -66,6 +67,27 @@ function InputDetails(props) {
         }))
     }
 
+    function educationOnChange(e) {
+        let id = e.target.parentElement.getAttribute("data-id");
+
+        const changedEducation = details.education.map((educationSub) => {
+            if (educationSub.id == id) {
+                return {
+                    ...educationSub,
+                    [e.target.name]: e.target.value,
+                }
+            }
+            return educationSub
+        })
+
+        setDetails((prevState) => ({
+            ...prevState,
+            education: [
+                ...changedEducation,
+            ]
+        }))
+    }
+
     function addExperience(e) {
         e.preventDefault();
         setDetails((prevState) => ({
@@ -84,6 +106,23 @@ function InputDetails(props) {
         }))
     }
 
+    function addEducation(e) {
+        e.preventDefault();
+        setDetails((prevState) => ({
+            ...prevState,
+            education: [
+                ...prevState.education,
+                {
+                    id: uniqid(),
+                    school: "",
+                    titleOfStudy: "",
+                    eduFrom: "",
+                    eduTo: "",
+                }
+            ]
+        }))
+    }
+
     function deleteExperience(e) {
         e.preventDefault();
         let id = e.target.parentElement.getAttribute("data-id");
@@ -96,12 +135,24 @@ function InputDetails(props) {
         }))
     }
 
+    function deleteEducation(e) {
+        e.preventDefault();
+        let id = e.target.parentElement.getAttribute("data-id");
+        let updatedEducation = details.education.filter((eduSub) => eduSub.id != id);
+        setDetails((prevState) => ({
+            ...prevState,
+            education: [
+                ...updatedEducation
+            ]
+        }))
+    }
+
 
     return (
         <form>
             <GeneralInformation name={details.name} email={details.email} phoneNumber={details.phoneNumber} handleOnChange={generalInformationOnChange}></GeneralInformation>
             <WorkExperience experiences={details.workExperience} addExperience={addExperience} deleteExperience={deleteExperience} handleOnChange={workExperienceOnChange}></WorkExperience>
-            {/* <Education></Education> */}
+            <Education educationDetails={details.education} addEducation={addEducation} deleteEducation={deleteEducation} handleOnChange={educationOnChange}></Education>
             <button type="submit">Submit</button>
         </form>
     )

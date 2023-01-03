@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "../styles/Education.css"
+import EducationSub from "./EducationSub";
 
 
 class Education extends Component {
@@ -8,13 +9,17 @@ class Education extends Component {
     }
 
     render() {
+        const {addEducation, deleteEducation, handleOnChange, educationDetails} = this.props;
+
         return (
             <div className="education-div">
                 <h3 className="subtitle subtitle-education">Education</h3>
-                <input className="input school-input" type="text" placeholder="School"/>
-                <input className="input title-of-study-input" type="text" placeholder="Title of Study"/>
-                <input className="input edu-from-input" type="text" placeholder="From"/>
-                <input className="input edu-to-input" type="text" placeholder="To"/>
+
+                {educationDetails.map((educationSub) => {
+                    return <EducationSub key={educationSub.id} id={educationSub.id} school={educationSub.school} titleOfStudy={educationSub.titleOfStudy} eduFrom={educationSub.eduFrom} eduTo={educationSub.eduTo} deleteEducation={deleteEducation} handleOnChange={handleOnChange}></EducationSub>
+                })}
+
+                <button className="add-education-btn delete-add-btn" type="button" onClick={addEducation}>Add</button>
             </div>
         )
     }

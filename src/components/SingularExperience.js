@@ -16,7 +16,7 @@ class SingularExperience extends Component {
                 <input className="input description-input" type="text" placeholder="Description" name="description" value={description} onChange={handleOnChange}/>
                 <input className="input we-from-input" type="text" placeholder="From" name="weFrom" value={weFrom} onChange={handleOnChange}/>
                 <input className="input we-to-input" type="text" placeholder="To" name="weTo" value={weTo} onChange={handleOnChange}/>
-                <button className="delete-experience-btn" onClick={deleteExperience}>Delete</button>
+                <button className="delete-experience-btn delete-add-btn" onClick={deleteExperience}>Delete</button>
             </div>
         )
     }
