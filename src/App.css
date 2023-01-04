@@ -22,5 +22,19 @@
   margin-top: 1rem;
   padding: 1.1rem 1rem;
   font-size: 1.25rem;
-  cursor: pointer
+  cursor: pointer;
+}
+
+.submit-details-btn {
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  background-color: blue;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: bold;
 }

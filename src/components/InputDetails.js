@@ -153,7 +153,10 @@ function InputDetails(props) {
             <GeneralInformation name={details.name} email={details.email} phoneNumber={details.phoneNumber} handleOnChange={generalInformationOnChange}></GeneralInformation>
             <WorkExperience experiences={details.workExperience} addExperience={addExperience} deleteExperience={deleteExperience} handleOnChange={workExperienceOnChange}></WorkExperience>
             <Education educationDetails={details.education} addEducation={addEducation} deleteEducation={deleteEducation} handleOnChange={educationOnChange}></Education>
-            <button type="submit">Submit</button>
+            <button className="submit-details-btn" type="submit" onClick={(e) => {
+                e.preventDefault();
+                props.updateState(details)
+            }}>Submit</button>
         </form>
     )
 }
