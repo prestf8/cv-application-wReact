@@ -1,0 +1,17 @@
+.cv {
+    height: 100vh;
+} 
+
+
+header {
+    background-color: rgb(33, 33, 33);
+    height: 10%;
+}
+
+.cv-main {
+    height: 90%;
+}
+
+.name-display {
+    color: white;
+}

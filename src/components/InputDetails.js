@@ -149,7 +149,7 @@ function InputDetails(props) {
 
 
     return (
-        <form>
+        <form className="input-details">
             <GeneralInformation name={details.name} email={details.email} phoneNumber={details.phoneNumber} handleOnChange={generalInformationOnChange}></GeneralInformation>
             <WorkExperience experiences={details.workExperience} addExperience={addExperience} deleteExperience={deleteExperience} handleOnChange={workExperienceOnChange}></WorkExperience>
             <Education educationDetails={details.education} addEducation={addEducation} deleteEducation={deleteEducation} handleOnChange={educationOnChange}></Education>

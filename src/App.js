@@ -42,8 +42,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <InputDetails updateState={this.updateState}></InputDetails>
-        <CurriculumVitae></CurriculumVitae>
+        <main className="main-container">
+          <InputDetails updateState={this.updateState}></InputDetails>
+          <CurriculumVitae name={this.state.name} email={this.state.email} phoneNumber={this.state.phoneNumber} workExperience={this.state.workExperience} education={this.state.education}></CurriculumVitae>
+        </main>
       </div>
     )
   }

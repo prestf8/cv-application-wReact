@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+
+
 .input {
   margin-top: 1rem;
   border-radius: 3px;
@@ -37,4 +46,15 @@
   outline: none;
   border-radius: 5px;
   font-weight: bold;
+}
+
+@media only screen and (min-width: 1300px) {
+  .main-container {
+    flex-direction: row;
+    max-width: 2000px;
+  }
+
+  .input-details, .cv {
+    width: 50%;
+  }
 }
