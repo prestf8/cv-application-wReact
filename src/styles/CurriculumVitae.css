@@ -1,7 +1,7 @@
 .cv {
     height: 100vh;
+    margin: 5px;
 } 
-
 
 header {
     background-color: rgb(33, 33, 33);
@@ -10,8 +10,43 @@ header {
 
 .cv-main {
     height: 90%;
+    background-color: aquamarine;
+    padding: 1rem;
 }
+
+.cv-main-subtitle {
+    font-size: 1.3rem;
+    text-decoration: underline;
+}
+
+.subcomponent {
+    display: flex;
+}
+
+.subcomponent-left {
+    width: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.subcomponent-right {
+    width: 75%;
+    display: flex;
+    align-items: center;
+}
+
 
 .name-display {
     color: white;
+}
+
+.time-range {
+    margin-right: 2rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.company-name,  .school {
+    font-size: 1.3rem;
 }
