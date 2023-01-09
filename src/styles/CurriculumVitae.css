@@ -4,13 +4,13 @@
 } 
 
 header {
-    background-color: rgb(33, 33, 33);
+    background-color: blue;
     height: 10%;
 }
 
 .cv-main {
     height: 90%;
-    background-color: aquamarine;
+    border: 2px solid blue;
     padding: 1rem;
 }
 

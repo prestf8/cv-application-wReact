@@ -14,7 +14,7 @@ function CurriculumVitae(props) {
                 <h4 className="header-component phone-number-display">{phoneNumber}</h4>
             </header>
             <div className="cv-main">
-                <div>
+                <div className="cv-experience">
                     <h4 className="cv-main-subtitle">Experience</h4>
                     {workExperience.map((experience) => {
                         return (
@@ -32,7 +32,7 @@ function CurriculumVitae(props) {
                         </div>)
                     })}
                 </div>
-                <div>
+                <div className="cv-education">
                     <h4 className="cv-main-subtitle">Education</h4>
                     {education.map((educationComponent) => {
                         return (
