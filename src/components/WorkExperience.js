@@ -1,16 +1,10 @@
-import React, {Component} from "react";
+import React from "react";
 import "../styles/WorkExperience.css"
 
 import SingularExperience from "./SingularExperience";
 
-
-class WorkExperience extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const {addExperience, deleteExperience, experiences, handleOnChange} = this.props;
+function WorkExperience(props) {
+        const {addExperience, deleteExperience, experiences, handleOnChange} = props;
 
         return (
             <div className="work-experience-div">
@@ -23,7 +17,6 @@ class WorkExperience extends Component {
                 <button type="button" className="add-experience-btn delete-add-btn" onClick={addExperience}>Add</button>
             </div>
         )
-    }
 }
 
 export default WorkExperience;
